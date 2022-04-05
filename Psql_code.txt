@@ -8,3 +8,8 @@ select row_to_json(row("ID", "Last_Name", "First_Name")) from "TestDataBase"."Sa
 with recursive sam_Recursive as
 (select * from "TestDataBase".med_memmbers where "ID" = 112)
 select * from sam_Recursive;
+
+---Create table/
+select "ID","Last_Name","First_Name","Age"
+Into "TestDataBase".patient_Names
+from "TestDataBase".med_memmbers;
